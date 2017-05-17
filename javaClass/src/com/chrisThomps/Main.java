@@ -11,7 +11,10 @@ public class Main {
         //hard drive size
         //behavior for a computer is shutting down, restarting, outputting sound
 
-        Car porsche = new Car();
-        Car holden = new Car();
+        Car porsche = new Car();    //all class objects must be initialized
+        Car holden = new Car();     //when creating an object always use keyWord new
+
+        porsche.setModel("Carrera");
+        System.out.println("Model is " + porsche.getModel());
     }
 }

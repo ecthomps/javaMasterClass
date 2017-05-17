@@ -7,6 +7,19 @@ public class Car {
     //a class is a blueprint for an object
     //encapsulation in Java is used to hide the methods from being accessed publicly
 
+    //behavior components
+    public void setModel(String model){ //mutuator
+        String validModel = model.toLowerCase();
+        if(validModel.equals("carrera") || validModel.equals("commodore"))
+            this.model = model;
+        else
+            this.model = "Unknown";
+    }
+
+    public String getModel(){
+        return this.model;
+    }
+
     //state components
     private int door, wheels;
     private String model, engine, color;
