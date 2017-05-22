@@ -5,21 +5,35 @@ package com.chrisThomps;
  */
 public class PC {
 
+    //you can only inherit from one class at a time
+    //therefore you can use a composition(interface)
+    //to inherit from multiple classes
+    //to make a composition, create an object from a class
     public PC(Case theCase, Monitor monitor, MotherBoard motherBoard) {
         this.theCase = theCase;
         this.monitor = monitor;
         this.motherBoard = motherBoard;
     }
 
-    public Case getTheCase() {
+    public void powerUp(){
+        getTheCase().pressPowerButton(); //monitor.pressButton() much better way
+        drawBoard();
+    }
+
+    public void drawBoard(){
+        //fancy graphics
+        monitor.drawPixel(1200, 1400, "yellow");
+    }
+
+    private Case getTheCase() {
         return theCase;
     }
 
-    public Monitor getMonitor() {
+    private Monitor getMonitor() {
         return monitor;
     }
 
-    public MotherBoard getMotherBoard() {
+    private MotherBoard getMotherBoard() {
         return motherBoard;
     }
 
