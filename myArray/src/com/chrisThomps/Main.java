@@ -1,13 +1,15 @@
 package com.chrisThomps;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
 
-        int [] arrIndex = {0, 1, 2, 3, 4, 5};
+        int [] myArray = new int[10];
+        int [] arrIndex = getArray(10);
         String [] arrString = {"Hey", "I", "Love", "Android"};
 
         //has a lot of power when used compared to traditional
@@ -37,5 +39,24 @@ public class Main {
         for(String items : myString)
             System.out.println("My Items: " + items);
 
+    }
+
+    public static int [] getArray(int number){
+        System.out.println("Enter " + number + " integer values");
+        Scanner scanner = new Scanner(System.in);
+        int[] values = new int[number];
+
+        for(int i = 0; i < values.length; i++)
+            values[i] = scanner.nextInt();
+
+        return values;
+    }
+
+    public static double getAverage(int[] values){
+        int sum = 0;
+        for (int i = 0; i < values.length; i++)
+            sum += values[i];
+
+        return (double) sum / (double) values.length;
     }
 }
