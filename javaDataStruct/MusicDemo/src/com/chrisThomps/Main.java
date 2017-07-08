@@ -6,7 +6,8 @@ import java.util.*;
 
 public class Main {
 
-    private static ArrayList<Album> albums= new ArrayList<Album>();
+    //private static ArrayList<Album> albums= new ArrayList<Album>()    //all from the javaInterface List
+    private static List<Album> albums= new ArrayList<Album>();
     public static void main(String[] args) {
 	// write your code here
 
@@ -31,7 +32,8 @@ public class Main {
         album.addSongstoAlbums("Glorious God", 4.35);
         albums.add(album);
 
-        LinkedList<Song> playList = new LinkedList<Song>();
+        //LinkedList<Song> playList = new LinkedList<Song>();
+        List<Song> playList = new ArrayList<Song>();
         albums.get(0).addSongstoPlaylist("Way Maker", playList);
         albums.get(0).addSongstoPlaylist("I live for you", playList);
         albums.get(0).addSongstoPlaylist("My God", playList); //does not exist
@@ -44,7 +46,8 @@ public class Main {
         play(playList);
     }
 
-    private static void play(LinkedList<Song> playList){
+    //private static void play(LinkedList<Song> playList)
+    private static void play(List<Song> playList){
         ListIterator<Song> listIterator = playList.listIterator();
         boolean quit = false;
         boolean isForward = true;
@@ -145,7 +148,8 @@ public class Main {
                     "5 - to show option menu");
     }
 
-    private static void printList(LinkedList<Song> playList){
+    //private static void printList(LinkedList<Song> playList){
+    private static void printList(List<Song> playList){
         Iterator<Song> iterator = playList.iterator();
         System.out.println("=======================");
         while(iterator.hasNext()){

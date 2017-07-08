@@ -11,7 +11,7 @@ public class DeskPhone implements ITelephone {
 
     @Override
     public void powerON() {
-        System.out.println("No action taker, desk phone has no power on button");
+        System.out.println("No action taken, desk phone has no power on button");
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DeskPhone implements ITelephone {
     }
 
     @Override
-    public boolean isCalled(int phoneNumber) {
+    public boolean callPhone(int phoneNumber) {
         if(this.myNumber == phoneNumber){
             isRinging = true;
             System.out.println("Ring Ring");

@@ -2,6 +2,7 @@ package com.chrisThomps;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Christian Thompson on 6/25/2017.
@@ -26,7 +27,8 @@ public class Album {
        return false;
     }
 
-    public boolean addSongstoPlaylist(int trackNumber, LinkedList<Song> songLinkedList){
+    // public boolean addSongstoPlaylist(int trackNumber, LinkedList<Song> songLinkedList)
+    public boolean addSongstoPlaylist(int trackNumber, List<Song> songLinkedList){
        int index = trackNumber - 1;
        if(index >= 0 && index <= this.songAlbum.size()){
            songLinkedList.add(this.songAlbum.get(index));
@@ -36,7 +38,8 @@ public class Album {
        return false;
     }
 
-    public boolean addSongstoPlaylist(String songTitle, LinkedList<Song> songLinkedList){
+    // public boolean addSongstoPlaylist(String songTitle, LinkedList<Song> songLinkedList)
+    public boolean addSongstoPlaylist(String songTitle, List<Song> songLinkedList){
         Song checkedSong = findSong(songTitle);
         if(checkedSong != null){
             songLinkedList.add(checkedSong);

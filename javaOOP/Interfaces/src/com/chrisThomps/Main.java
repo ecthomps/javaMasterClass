@@ -19,7 +19,12 @@ public class Main {
 
         ITelephone iTelephone = new DeskPhone(123456);
         iTelephone.powerON();
-        iTelephone.dial(123456);
+        iTelephone.callPhone(123456);
         iTelephone.answer();
+
+        ITelephone chrisPhone = new MobilePhone(23456);
+        chrisPhone.powerON();
+        chrisPhone.callPhone(23456);
+        chrisPhone.answer();
     }
 }
