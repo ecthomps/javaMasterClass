@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class GearBox {
 
-    //inner class is a class withon another class
+    //inner class is a class within another class
     public GearBox(int maxGears) {
         this.maxGears = maxGears;
         this.gears = new ArrayList<Gear>();
