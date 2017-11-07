@@ -1,0 +1,10 @@
+// reversString
+void reverseString(string reverse){
+    int n = reverse.length();
+    //reverse the string
+    for(int i = 0; i < n/2; i++){
+        swap(reverse[i], reverse[n-i-1]);
+    }
+    cout << "readline: " << reverse << endl;
+}
+
