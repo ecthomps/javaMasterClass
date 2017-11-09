@@ -1,10 +1,41 @@
-// reversString
-void reverseString(string reverse){
-    int n = reverse.length();
-    //reverse the string
-    for(int i = 0; i < n/2; i++){
-        swap(reverse[i], reverse[n-i-1]);
-    }
-    cout << "readline: " << reverse << endl;
-}
+//prac1 reverse string
 
+        void reverseString(string reverse){
+            int n = reverse.length();
+            //reverse the string
+            for(int i = 0; i < n/2; i++){
+                swap(reverse[i], reverse[n-i-1]);
+            }
+            cout << "readline: " << reverse << endl;
+        }
+
+        #include <iostream>
+        #include <algorithm>
+        using namespace std;
+        int main()
+        {
+           string str = "geeksforgeeks";
+           // Reverse str[beign..end]
+           reverse(str.begin(),str.end());
+           cout << str;
+           return 0;
+        }
+
+
+//prac2 findDuplicate
+
+
+        void printDuplicates(int arr[], int size){
+
+            //int size = sizeof(myArr)/sizeof(*myArr);
+
+            for (int i = 0; i < size; i++){
+                if(arr[abs(arr[i])] >= 0)
+                    arr[abs(arr[i])] = -arr[abs(arr[i])];
+                else
+                    cout << abs(arr[i]) << " ";
+            }
+        }
+
+
+//[rac3 find firstDuplicate
