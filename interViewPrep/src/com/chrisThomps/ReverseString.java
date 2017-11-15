@@ -1,6 +1,6 @@
 package com.chrisThomps;
 
-public class reverseString {
+public class ReverseString {
 
     public void printReverseString(String myString) {
 
