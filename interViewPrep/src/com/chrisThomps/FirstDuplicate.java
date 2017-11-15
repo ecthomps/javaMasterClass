@@ -3,7 +3,7 @@ package com.chrisThomps;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class firstDuplicate {
+public class FirstDuplicate {
 
     /*
     *  int[] arr = {2, 3, 1, 3, 4, 5, 2};
