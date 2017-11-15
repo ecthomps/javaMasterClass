@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import static java.lang.Math.abs;
 
-public class findDuplicate {
+public class FindDuplicate {
 
     /*
     *   int[] arr = {2, 3, 3, 1, 5, 2};
