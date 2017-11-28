@@ -5,10 +5,27 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class groupingDishes {
+public class GroupingDishes {
 
+    /*
+    * String[][] dishes = new String[][]
+                {{"Salad", "Tomato", "Cucumber", "Salad", "Sauce"},
+                {"Pizza", "Tomato", "Sausage", "Sauce", "Dough"},
+                {"Quesadilla", "Chicken", "Cheese", "Sauce"},
+                {"Sandwich", "Salad", "Bread", "Tomato", "Cheese"}};
+
+        GroupingDishes groupingDishes = new GroupingDishes();
+
+        String[][] showDishes = groupingDishes.groupingDishes(dishes);
+
+        for(String[] elem : showDishes){
+            for(int i = 0; i < elem.length; i++){
+                System.out.print(elem[i] + " ");
+            }
+            System.out.println();
+        }
+    * */
     public String[][] groupingDishes(String[][] dishes){
-
         Map<String, ArrayList<String>> ingr = new TreeMap();
 
         //iterate through the array to create hashMap
