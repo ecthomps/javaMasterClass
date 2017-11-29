@@ -33,9 +33,9 @@ public class FirstNotRepeatChar {
 
         char[] c = s.toCharArray();
 
-        for (int i = 0; i < c.length; i++){
-            if(s.indexOf(c[i]) == s.lastIndexOf(c[i])){
-                return c[i];
+        for (char aC : c) {
+            if (s.indexOf(aC) == s.lastIndexOf(aC)) {
+                return aC;
             }
         }
         return '_';
