@@ -15,7 +15,7 @@
         int main()
         {
            string str = "geeksforgeeks";
-           // Reverse str[beign..end]
+           // Reverse str[begin..end]
            reverse(str.begin(),str.end());
            cout << str;
            return 0;
@@ -38,4 +38,59 @@
         }
 
 
-//[rac3 find firstDuplicate
+//prac3 find firstDuplicate
+
+//templates && strings
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+template <class T>
+class Node{
+
+    public:
+    void pop(){
+        elems.pop_back();
+    }
+
+    T top(){
+        return elems.back();
+    }
+
+    void push(T const& a){
+        elems.push_back(a);
+    }
+
+    bool empty() const{return elems.empty();}
+
+    private:
+    vector<T> elems;
+};
+
+int main()
+{
+    int arr[3][3];
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++)
+            arr[i][j] = 2*i+j;
+    }
+
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    return 0;
+}
