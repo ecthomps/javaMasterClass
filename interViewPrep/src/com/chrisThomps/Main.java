@@ -1,36 +1,71 @@
 package com.chrisThomps;
 
 import java.io.IOException;
+import java.util.Hashtable;
 import java.util.Scanner;
 
 public class Main {
 
-    private static final String ADD = "add";
-    private static final String FIND = "find";
+    public static boolean isWordsMatch(Hashtable<String, Integer> magazineW,
+                                       Hashtable<String, Integer> ransomW){
+        if(magazineW == null && ransomW == null)
+            return true;
+
+        /*for(String elem : ransomW.keySet()){
+            if(!ransomW.get(elem).equals(magazineW.get(elem)))
+                return false;
+        }*/
+
+        for(String elem : ransomW.keySet()){
+            assert magazineW != null;
+            if(!magazineW.containsKey(elem))
+                return false;
+        }
+
+        return true;
+    }
 
     public static void main(String[] args) throws IOException {
         // write your code here
-        /*ArrayList<String> contactBook = new ArrayList<>();
+
+        RansomNote ransomNote = new RansomNote();
 
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        for (int a0 = 0; a0 < n; a0++) {
-            String op = in.next();
-            String contact = in.next();
-            doOps(op, contact, contactBook);
-        }*/
+        String[] mn = in.nextLine().split(" ");
 
-        TriesContact triesContact = new TriesContact();
+        int mCount = Integer.parseInt(mn[0]);
+        int rCount = Integer.parseInt(mn[1]);
 
-        Scanner in = new Scanner(System.in);
-        Integer n = Integer.parseInt(in.nextLine());
-        for (int i = 0; i < n; i++){
-            String[] opData = in.nextLine().split("\\s+");
+        Hashtable<String, Integer> mgznWords = new Hashtable<>();
+        Hashtable<String, Integer> rnsmWords = new Hashtable<>();
 
-            if(opData[0].equalsIgnoreCase(ADD))
-                triesContact.addNameToContact(opData[1]);
-            if(opData[0].equalsIgnoreCase(FIND))
-                System.out.println(triesContact.numOfFounds(opData[1]));
+        String[] magazineWords = new String[mCount];
+        String[] magazineItems = in.nextLine().split("\\s+");
+//        in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for(int i = 0; i < mCount; i++){
+        String magazine = magazineItems[i];
+        if(mgznWords.containsKey(magazine))
+            mgznWords.put(magazine, mgznWords.get(magazine) + 1);
+        else
+            mgznWords.put(magazine, 1);
         }
+
+        String[] ransomItems = in.nextLine().split("\\s+");
+//        in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for(int i = 0; i < rCount; i++){
+        String ransom = ransomItems[i];
+        if(rnsmWords.containsKey(ransom))
+            rnsmWords.put(ransom, rnsmWords.get(ransom) + 1);
+        else
+            rnsmWords.put(ransom, 1);
+        }
+
+        if(ransomNote.isWordsMatch(mgznWords, rnsmWords))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+
     }
 }
