@@ -10,7 +10,14 @@ public class RansomNote {
             return true;
 
         for(String elem : ransomW.keySet()){
-            if(!ransomW.get(elem).equals(magazineW.get(elem)))
+            /*if(!ransomW.get(elem).equals(magazineW.get(elem)))
+                return false;*/
+
+            assert magazineW != null;
+            if(!magazineW.containsKey(elem))
+                return false;
+
+            if(magazineW.get(elem) < ransomW.get(elem))
                 return false;
         }
 
